@@ -21,6 +21,28 @@ const altIndexOf = (array, unit) => {
     return position;
 };
 
+const altPush = (array, unit) => {
+    const position = altLength(array);
+    array[position] = unit;
+    return array;
+};
+
+const altSlice = (array, start, end) => {
+    const slice = [];
+    if (end > altLength(array)) {
+        end = altLength(array) - 1;
+    }
+    for (let i = start; i <= end; i++) {
+        altPush(slice, array[i]);
+    }
+    return slice;
+};
+
+const altPop = (array) => {
+    array = altSlice(array, 0, altLength(array) - 2);
+    return array;
+};
+
 const cars = [1, 2, 3, 4, 5, 6, "bitch"];
 
-console.log(altIndexOf(cars, 4));
+console.log(altPop(cars));
