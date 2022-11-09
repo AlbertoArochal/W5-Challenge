@@ -6,18 +6,21 @@ const altArray = {};
 
 const altLength = (array) => {
     let counter = 0;
-    array.forEach((element) => counter++);
+    for (const element of array) {
+        counter++;
+    }
     return counter;
 };
 
 const altIndexOf = (array, unit) => {
     let position;
-    array.forEach((element, counter) => {
+    let counter = 0;
+    for (const element of array) {
         counter++;
         if (element === unit) {
             position = counter - 1;
         }
-    });
+    }
     return position;
 };
 
@@ -43,6 +46,14 @@ const altPop = (array) => {
     return array;
 };
 
+const altShift = (array, unit) => {
+    const shifted = [unit];
+    for (const element of array) {
+        altPush(shifted, element);
+    }
+    return shifted;
+};
+
 const cars = [1, 2, 3, 4, 5, 6, "bitch"];
 
-console.log(altPop(cars));
+console.log(altIndexOf(cars, "bitch"));
