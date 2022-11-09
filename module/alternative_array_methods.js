@@ -103,8 +103,26 @@ const altFilter = (array, callback) => {
     return cumulator;
 };
 
+const altJoin = (array, separator) => {
+    let altString = "";
+    if (separator === undefined) {
+        for (const element of array) {
+            altString += element.toString();
+            separator = "";
+        }
+        return altString.slice(0);
+    } else {
+        for (const element of array) {
+            altString += element.toString() + separator;
+        }
+    }
+    return altString.slice(0, -separator.length);
+};
+
 console.log(
     altFilter(cars, function (element) {
         return element > 5;
     })
 );
+
+console.log(altJoin(cars));
