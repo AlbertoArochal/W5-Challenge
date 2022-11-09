@@ -2,8 +2,10 @@
 /* eslint-disable indent */
 /* eslint-disable semi */
 /* eslint-disable quotes */
-const altArray = {};
 
+const cars = [1, 2, 7, 4, 5, 6, "mazorca"];
+
+const altArray = new Object();
 const altLength = (array) => {
     let counter = 0;
     for (const element of array) {
@@ -46,14 +48,63 @@ const altPop = (array) => {
     return array;
 };
 
-const altShift = (array, unit) => {
-    const shifted = [unit];
+const altUnShift = (array, unit) => {
+    const unshifted = [unit];
     for (const element of array) {
-        altPush(shifted, element);
+        altPush(unshifted, element);
     }
+    globalThis.cars = unshifted;
+    return altLength(unshifted);
+};
+
+const altShift = (array) => {
+    const shifted = array[0];
+    array = altSlice(array, 1, altLength(array) - 1);
     return shifted;
 };
 
-const cars = [1, 2, 3, 4, 5, 6, "bitch"];
+const altSome = (array, callback) => {
+    let booleator = false;
+    for (const element of array) {
+        if (callback(element)) {
+            booleator = true;
+        }
+    }
+    return booleator;
+};
 
-console.log(altIndexOf(cars, "bitch"));
+const altEvery = (array, callback) => {
+    let booleator = true;
+    for (const element of array) {
+        if (!callback(element)) {
+            booleator = false;
+        }
+    }
+    return booleator;
+};
+
+const altFind = (array, callback) => {
+    let i = 0;
+    for (const element of array) {
+        if (callback(element)) {
+            return array[i];
+        }
+        i++;
+    }
+};
+
+const altFilter = (array, callback) => {
+    const cumulator = [];
+    for (const element of array) {
+        if (callback(element)) {
+            altPush(cumulator, element);
+        }
+    }
+    return cumulator;
+};
+
+console.log(
+    altFilter(cars, function (element) {
+        return element > 5;
+    })
+);
