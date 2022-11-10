@@ -34,11 +34,16 @@ const altSlice = (array, start, end) => {
     if (end > altLength(array)) {
         end = altLength(array) - 1;
     }
-    for (let i = start; i <= end; i++) {
+    for (let i = start; i < end; i++) {
         altPush(slice, array[i]);
     }
     return slice;
 };
+
+const altArray = [3, 75, 5, 6, "macarra", true];
+
+console.log(altSlice(altArray, 0, 3));
+console.log(altArray.slice(0, 3));
 
 const altPop = (array) => {
     array = altSlice(array, 0, altLength(array) - 2);
