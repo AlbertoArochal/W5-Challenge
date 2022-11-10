@@ -1,1 +1,15 @@
-
+import {
+    altLength,
+    altIndexOf,
+    altPush,
+    altPop,
+    altFilter,
+    altEvery,
+    altFind,
+    altIncludes,
+    altJoin,
+    altShift,
+    altSlice,
+    altSome,
+    altUnShift,
+} from "./alternative_array_methods.js";
