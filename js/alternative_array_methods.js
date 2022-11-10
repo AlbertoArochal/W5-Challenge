@@ -125,13 +125,13 @@ const altIncludes = (array, unit) => {
     return false;
 };
 
-console.log(
+/* console.log(
     altFilter(cars, function (element) {
         return element > 5;
     })
 );
 
-console.log(altIncludes(cars, "mazorca"));
+console.log(altIncludes(cars, "mazorca")); */
 
 export {
     altLength,
