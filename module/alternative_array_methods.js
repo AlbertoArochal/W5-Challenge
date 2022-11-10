@@ -3,9 +3,6 @@
 /* eslint-disable semi */
 /* eslint-disable quotes */
 
-const cars = [1, 2, 7, 4, 5, 6, "mazorca"];
-
-const altArray = new Object();
 const altLength = (array) => {
     let counter = 0;
     for (const element of array) {
@@ -135,3 +132,19 @@ console.log(
 );
 
 console.log(altIncludes(cars, "mazorca"));
+
+export {
+    altLength,
+    altIndexOf,
+    altPush,
+    altPop,
+    altFilter,
+    altEvery,
+    altFind,
+    altIncludes,
+    altJoin,
+    altShift,
+    altSlice,
+    altSome,
+    altUnShift,
+};
