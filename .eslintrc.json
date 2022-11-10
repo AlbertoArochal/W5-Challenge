@@ -10,10 +10,9 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
+
     "rules": {
-        "rules": {
-            "import/extensions": "off",
-            "no-console": "off"
-        }
+        "import/extensions": "off",
+        "no-console": "off"
     }
 }
