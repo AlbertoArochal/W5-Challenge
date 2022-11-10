@@ -19,6 +19,7 @@ const tryFunct = function (element) {
 };
 
 const separator = "...,";
+const newValue = "marcianete";
 
 describe("Given altLength", () => {
     const altArray = [3, 75, 5, 6, "macarra", true];
@@ -66,11 +67,66 @@ describe("Given altJoin", () => {
 
 describe("Given Slice", () => {
     const altArray = [3, 75, 5, 6, "macarra", true];
-    describe("Receive function", () => {
-        test(`Return boolean`, () => {
+    describe("Receive numbers", () => {
+        test(`Return array`, () => {
             const result = altSlice(altArray, 0, 3);
             const expected = altArray.slice(0, 3);
             expect(result).toStrictEqual(expected);
+        });
+    });
+});
+
+describe("Given altFind", () => {
+    const altArray = [3, 75, 5, 6, "macarra", true];
+    describe("Receive function", () => {
+        test(`Return boolean`, () => {
+            const result = altFind(altArray, tryFunct);
+            const expected = altArray.find(tryFunct);
+            expect(result).toStrictEqual(expected);
+        });
+    });
+});
+
+describe("Given altEvery", () => {
+    const altArray = [3, 75, 5, 6, "macarra", true];
+    describe("Receive function", () => {
+        test(`Return boolean`, () => {
+            const result = altEvery(altArray, tryFunct);
+            const expected = altArray.every(tryFunct);
+            expect(result).toStrictEqual(expected);
+        });
+    });
+});
+
+describe("Given altIncludes", () => {
+    const altArray = [3, 75, 5, 6, "macarra", true];
+    describe("Receive function", () => {
+        test(`Return boolean`, () => {
+            const result = altIncludes(altArray, tryFunct);
+            const expected = altArray.includes(tryFunct);
+            expect(result).toStrictEqual(expected);
+        });
+    });
+});
+
+describe("Given altSome", () => {
+    const altArray = [3, 75, 5, 6, "macarra", true];
+    describe("Receive function", () => {
+        test(`Return boolean`, () => {
+            const result = altSome(altArray, tryFunct);
+            const expected = altArray.some(tryFunct);
+            expect(result).toStrictEqual(expected);
+        });
+    });
+});
+
+describe("Given altpush", () => {
+    const altArray = [3, 75, 5, 6, "macarra", true];
+    describe("Receive array and value", () => {
+        test(`Return index of value ${altArray.indexOf(75)}`, () => {
+            const result = altPush(altArray, newValue);
+            const expected = altArray.push(newValue);
+            expect(result).toBe(expected);
         });
     });
 });

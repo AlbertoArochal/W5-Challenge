@@ -40,11 +40,6 @@ const altSlice = (array, start, end) => {
     return slice;
 };
 
-const altArray = [3, 75, 5, 6, "macarra", true];
-
-console.log(altSlice(altArray, 0, 3));
-console.log(altArray.slice(0, 3));
-
 const altPop = (array) => {
     array = altSlice(array, 0, altLength(array) - 2);
     return array;
@@ -129,14 +124,6 @@ const altIncludes = (array, unit) => {
     }
     return false;
 };
-
-/* console.log(
-    altFilter(cars, function (element) {
-        return element > 5;
-    })
-);
-
-console.log(altIncludes(cars, "mazorca")); */
 
 export {
     altLength,
