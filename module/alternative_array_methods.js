@@ -119,10 +119,19 @@ const altJoin = (array, separator) => {
     return altString.slice(0, -separator.length);
 };
 
+const altIncludes = (array, unit) => {
+    for (const element of array) {
+        if (element === unit) {
+            return true;
+        }
+    }
+    return false;
+};
+
 console.log(
     altFilter(cars, function (element) {
         return element > 5;
     })
 );
 
-console.log(altJoin(cars));
+console.log(altIncludes(cars, "mazorca"));
