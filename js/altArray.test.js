@@ -123,9 +123,9 @@ describe("Given altSome", () => {
 describe("Given altpush", () => {
     const altArray = [3, 75, 5, 6, "macarra", true];
     describe("Receive array and value", () => {
-        test(`Return index of value ${altArray.indexOf(75)}`, () => {
+        test(`Return index of new value}`, () => {
             const result = altPush(altArray, newValue);
-            const expected = altArray.push(newValue);
+            const expected = 7;
             expect(result).toBe(expected);
         });
     });

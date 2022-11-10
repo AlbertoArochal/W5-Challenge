@@ -26,7 +26,7 @@ const altIndexOf = (array, unit) => {
 const altPush = (array, unit) => {
     const position = altLength(array);
     array[position] = unit;
-    return array;
+    return altLength(array);
 };
 
 const altSlice = (array, start, end) => {
