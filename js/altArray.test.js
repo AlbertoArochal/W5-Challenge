@@ -2,16 +2,16 @@ import {
     altLength,
     altIndexOf,
     altPush,
-    altPop,
     altFilter,
     altEvery,
     altFind,
     altIncludes,
     altJoin,
-    altShift,
     altSlice,
     altSome,
     altUnShift,
+    altPop,
+    altShift,
 } from "./altArray";
 
 const tryFunct = function (element) {
