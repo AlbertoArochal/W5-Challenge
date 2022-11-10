@@ -34,7 +34,7 @@ const altSlice = (array, start, end) => {
     if (end > altLength(array)) {
         end = altLength(array) - 1;
     }
-    for (let i = start; i <= end; i++) {
+    for (let i = start; i < end; i++) {
         altPush(slice, array[i]);
     }
     return slice;
@@ -124,14 +124,6 @@ const altIncludes = (array, unit) => {
     }
     return false;
 };
-
-/* console.log(
-    altFilter(cars, function (element) {
-        return element > 5;
-    })
-);
-
-console.log(altIncludes(cars, "mazorca")); */
 
 export {
     altLength,
